@@ -12,7 +12,6 @@
   - [Database](#Database)
   - [MessageQueue](#MessageQueue)
 - [GeneralWorkflow](#GeneralWorkflow)
-  - [FileUpload](#FileUpload)
   - [WorkflowInit](#WorkflowInit)
   - [ConfigYaml](#ConfigYaml)
 - [Monitoring](#Monitoring)
@@ -23,15 +22,6 @@
 Record the tools used for this project, e.g. version, reason
 ## GeneralWorkflow
 The backend will consist of four services: Middleware manager (mwm), File transfer manager (ftm), Workflow manager (wfm), and Tool worker manager (twm). These services will be represented as pods with three containers, and there will be replication for each pod.
-### FileUpload
-```
-Handel file transfer
-```
-  1. FileTransferManager (ftm) server
-      - Users can upload files to the server. 
-      - The frontend and Beego backend handle the file download to the local system. 
-      - After performing necessary checks and validations, the frontend sends an upload request to the ftm's endpoint. 
-      - The file is then uploaded to an s3 bucket.
 ### Workflow
 ```
 Init workflow based on yaml file, the yaml file is customizable (formed based on frontend submit form), it defines the process logic of workflow pipeline and contins the required parameters of each tool within the pipeline.
